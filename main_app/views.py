@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView
+from django.views.generic.edit import CreateView
 from .models import Trip
 
 # Create your views here.
@@ -13,3 +14,8 @@ def trips_index(request):
 def trips_detail(request, trip_id):
   trip = Trip.objects.get(id=trip_id)
   return render(request, 'trips/detail.html', { 'trip': trip })
+
+class TripCreate(CreateView):
+  model = Trip
+  fields = '__all__'
+  success_url = '/trips/'
