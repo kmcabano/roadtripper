@@ -8,14 +8,22 @@
 {% block content %}
 
 <div class="page-header">
+  {% if object %}
+  <h1>Edit {{object.name}}</h1>
+  {% else %}
   <h1>New Trip</h1>
+  {% endif %}
 </div>
 <form action="" method="post" class"form-container">
   {% csrf_token %}
   <table>
   {{ form.as_table }}
   </table>
+  {% if object %}
+  <button type="submit" class="btn submit">Update Trip</button>
+  {% else %}
   <button type="submit" class="btn submit">Create Trip</button>
+  {% endif %}
 </form>
 
 {% endblock %}

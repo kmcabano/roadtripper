@@ -17,6 +17,10 @@
     <h2>Start: {{ trip.start }}</h2>
     <h2>End: {{ trip.end }}</h2>
   </div>
+  <div class="trip-actions">
+    <a href="{% url 'trips_update' trip.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'trips_delete' trip.id %}" class="btn warn">Delete</a>
+  </div>
 </section>
 <div class="stops-container">
   <section class="stops">

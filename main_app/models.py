@@ -2,6 +2,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
+from django.urls import reverse
 
 POSITIONS = (
   ('O', 'Origin'),
@@ -17,7 +18,10 @@ class Trip(models.Model):
 
   def __str__(self):
     return self.name
-
+  
+  def get_absolute_url(self):
+      return reverse("trips_detail", kwargs={"trip_id": self.id})
+  
 class Stop(models.Model):
   name = models.CharField(max_length=100)
   arrive = models.DateField(null=True, blank=True)
