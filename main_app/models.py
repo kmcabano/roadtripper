@@ -1,7 +1,9 @@
+from typing import Text
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
+from django.db.models.fields import TextField
 from django.urls import reverse
 
 POSITIONS = (
@@ -32,11 +34,11 @@ class Stop(models.Model):
     default = POSITIONS[1][1]
   )
   lodging = models.CharField(max_length=100, null=True, blank=True)
-  food = ArrayField(models.CharField(max_length=200), null=True, blank=True)
-  todos = ArrayField(models.CharField(max_length=200, null=True, blank=True))
+  food = TextField(max_length=500)
+  todos = TextField(max_length=2000)
 
   trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 
-  # def __str__(self):
-  #     return f"{self.get_position_display()}"
+  def __str__(self):
+      return self.name
   
