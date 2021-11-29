@@ -20,16 +20,16 @@ class Trip(models.Model):
 
 class Stop(models.Model):
   name = models.CharField(max_length=100)
-  arrive = models.DateField()
-  depart = models.DateField()
+  arrive = models.DateField(null=True, blank=True)
+  depart = models.DateField(null=True, blank=True)
   position = models.CharField(
     max_length=1,
     choices=POSITIONS,
     default = POSITIONS[1][1]
   )
-  lodging = models.CharField(max_length=100)
-  food = ArrayField(models.CharField(max_length=200))
-  todos = ArrayField(models.CharField(max_length=200))
+  lodging = models.CharField(max_length=100, null=True, blank=True)
+  food = ArrayField(models.CharField(max_length=200), null=True, blank=True)
+  todos = ArrayField(models.CharField(max_length=200, null=True, blank=True))
 
   trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 

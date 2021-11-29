@@ -18,5 +18,24 @@
     <h2>End: {{ trip.end }}</h2>
   </div>
 </section>
+<div class="stops-container">
+  <section class="stops">
+    <h2 class="stops-title">Stops</h2>
+    <table>
+      <thead>
+        <tr><th>Location</th><th>Arrive</th><th>Depart</th></tr>
+      </thead>
+      <tbody>
+        {% for stop in trip.stop_set.all %}
+          <tr>
+            <td>{{stop.name}}</td>
+            <td>{{stop.arrive}}</td>
+            <td>{{stop.depart}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
 
 {% endblock %}
