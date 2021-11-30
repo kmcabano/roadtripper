@@ -43,6 +43,7 @@
             <td>{{stop.lodging}}</td>
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
+            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
         {% endif %}
         {% if stop.get_position_display == 'Stop' %}
@@ -54,6 +55,7 @@
             <td>{{stop.lodging}}</td>
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
+            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
         {% endif %}
         {% if stop.get_position_display == 'Destination' %}
@@ -65,6 +67,7 @@
             <td>{{stop.lodging}}</td>
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
+            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
         {% endif %}
         {% endfor %}

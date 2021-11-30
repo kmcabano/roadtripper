@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Trip
+from .models import Stop, Trip
 from .forms import StopForm
 
 # Create your views here.
@@ -23,6 +23,12 @@ def add_stop(request, trip_id):
     new_stop = form.save(commit=False)
     new_stop.trip_id = trip_id
     new_stop.save()
+  return redirect('trips_detail', trip_id=trip_id)
+
+def stops_delete(request, stop_id):
+  stop = Stop.objects.get(id=stop_id)
+  trip_id = stop.trip_id
+  stop.delete()
   return redirect('trips_detail', trip_id=trip_id)
 
 class TripCreate(CreateView):
