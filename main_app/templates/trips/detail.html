@@ -7,15 +7,16 @@
   type="text/css" 
   href="{% static 'css/trip-detail.css' %}"
 />
+<script defer src="{% static 'js/trip-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
 <section class="trip-container">
    <div class="trip-details">
-    <h1>{{ trip.name }} Details</h1>
-    <h2>Start: {{ trip.start }}</h2>
-    <h2>End: {{ trip.end }}</h2>
+    <h1>{{ trip.name }}</h1>
+    <h2>{{ trip.start }} to {{ trip.end }}</h2>
+    <h3>{{ trip.description }}</h2>
   </div>
   <div class="trip-actions">
     <a href="{% url 'trips_update' trip.id %}" class="btn warn">Edit</a>
@@ -77,7 +78,9 @@
       </tbody>
     </table>
   </section>
-  <section class"add-stops">
+  <br>
+  <button id="stop-toggle">Add Stop</button>
+  <section class="add-stops" style="display:none">
   <h2>Add a Stop</h2>
     <form
       action="{% url 'add_stop' trip.id %}"
