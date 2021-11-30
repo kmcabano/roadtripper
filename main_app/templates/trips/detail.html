@@ -39,10 +39,7 @@
     <h2 class="stops-title">Stops</h2>
     <table>
       <thead>
-        <tr><th>Location</th><th>Arrive</th><th>Depart</th><th>Origin/Stop/Destination</th>
-        <th>Lodging</th>
-        <th>Food</th>
-        <th>Things To Do</th></tr>
+        <tr><th>Location</th><th>Arrive</th><th>Depart</th></tr>
       </thead>
       <tbody class="stops-table">
         {% for stop in trip.stop_set.all %}
@@ -51,10 +48,6 @@
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td>{{stop.get_position_display}}</td>
-            <td>{{stop.lodging}}</td>
-            <td>{{stop.food}}</td>
-            <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
@@ -63,10 +56,6 @@
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td>{{stop.get_position_display}}</td>
-            <td>{{stop.lodging}}</td>
-            <td>{{stop.food}}</td>
-            <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
@@ -75,10 +64,6 @@
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td>{{stop.get_position_display}}</td>
-            <td>{{stop.lodging}}</td>
-            <td>{{stop.food}}</td>
-            <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
           </tr>
