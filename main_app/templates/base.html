@@ -18,20 +18,27 @@
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <a href="/">
-       Home
-      </a>
-    </div>
-    <nav>
+      <nav>
       <ul>
         {% if user.is_authenticated %}
+        <div class="nav-left">
+          <li>ROADTRIPPER</li>
+        </div>
+        <div class="nav-right">
+          <li><a href="/">Home</a></li>
           <li><a href="{% url 'trips_index' %}">My Trips</a></li>
           <li><a href ="{% url 'trips_create' %}">New Trip</a></li>
           <li><a href="{% url 'logout' %}">Logout</a></li>
+        </div>
         {% else %}
+        <div class="nav-left">
+          <li>ROADTRIPPER</li>
+        </div>
+        <div class="nav-right">
+          <li><a href="/">Home</a></li>
           <li><a href="{% url 'home' %}">Log In</a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        </div>
         {% endif %}
       </ul>
     </nav>
