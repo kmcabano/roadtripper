@@ -1,5 +1,4 @@
 const StopToggle = document.getElementById('stop-toggle')
-
 StopToggle.addEventListener('click', showStopForm)
 
 function showStopForm() {
