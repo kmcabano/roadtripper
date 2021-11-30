@@ -1,6 +1,8 @@
+from django.db.models import fields
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse
 from .models import Stop, Trip
 from .forms import StopForm
 
@@ -42,3 +44,10 @@ class TripUpdate(UpdateView):
 class TripDelete(DeleteView):
   model = Trip
   success_url = '/trips/'
+
+class StopUpdate(UpdateView):
+  model = Stop
+  fields = ['name', 'arrive', 'depart', 'position', 'lodging', 'food', 'todos']
+
+  def get_success_url(self):
+      return reverse('trips_detail', kwargs={'trip_id': self.object.trip_id})

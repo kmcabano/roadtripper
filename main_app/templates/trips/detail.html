@@ -44,6 +44,7 @@
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_update' stop.id %}" class="btn warn">Edit</a></td>
           </tr>
         {% endif %}
         {% if stop.get_position_display == 'Stop' %}
@@ -56,6 +57,7 @@
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_update' stop.id %}" class="btn warn">Edit</a></td>
           </tr>
         {% endif %}
         {% if stop.get_position_display == 'Destination' %}
@@ -68,6 +70,7 @@
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
             <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_update' stop.id %}" class="btn warn">Edit</a></td>
           </tr>
         {% endif %}
         {% endfor %}
