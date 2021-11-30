@@ -37,6 +37,11 @@ def stops_delete(request, stop_id):
   stop.delete()
   return redirect('trips_detail', trip_id=trip_id)
 
+@login_required
+def stops_detail(request, stop_id):
+  stop = Stop.objects.get(id=stop_id)
+  return render(request, 'stops/detail.html', { 'stop': stop })
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
