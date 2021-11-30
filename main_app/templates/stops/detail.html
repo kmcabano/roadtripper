@@ -29,8 +29,7 @@
 <p>{{stop.lodging}}</p>
 <p>{{stop.food}}</p>
 <p>{{stop.todos}}</p>
-<p><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></p>
 <p><a href="{% url 'stops_update' stop.id %}" class="btn warn">Edit</a></p>
-
-
+<p><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></p>
+<p><a href="{% url 'trips_detail' stop.trip_id %}">Back</a></p>
 {% endblock %}

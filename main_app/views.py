@@ -40,7 +40,8 @@ def stops_delete(request, stop_id):
 @login_required
 def stops_detail(request, stop_id):
   stop = Stop.objects.get(id=stop_id)
-  return render(request, 'stops/detail.html', { 'stop': stop })
+  trip_id = stop.trip_id
+  return render(request, 'stops/detail.html', { 'stop': stop, 'trip_id': trip_id })
 
 def signup(request):
   error_message = ''
@@ -78,6 +79,3 @@ class TripDelete(LoginRequiredMixin, DeleteView):
 class StopUpdate(LoginRequiredMixin, UpdateView):
   model = Stop
   fields = ['name', 'arrive', 'depart', 'position', 'lodging', 'food', 'todos']
-
-  # def get_success_url(self):
-  #     return reverse('stops_detail', kwargs={'stop_id': self.object.stop_id})
