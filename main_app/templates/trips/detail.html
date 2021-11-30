@@ -86,6 +86,7 @@
       action="{% url 'add_stop' trip.id %}"
       method="post" 
       class="subsection-content"
+      autocomplete="off"
     >
       {% csrf_token %}
       {{ stop_form.as_p }}
