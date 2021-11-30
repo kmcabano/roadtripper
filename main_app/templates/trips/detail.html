@@ -33,7 +33,9 @@
     <a href="{% url 'trips_delete' trip.id %}" class="btn warn">Delete</a>
   </div>
 </section>
+<br>
 <div class="stops-container">
+  {% if trip.stop_set.all.count %}
   <section class="stops">
     <h2 class="stops-title">Stops</h2>
     <table>
@@ -88,6 +90,9 @@
       </tbody>
     </table>
   </section>
+  {% else %}
+    <section class="stops">There are no stops on this trip</section>
+  {% endif %}
   <br>
   <button id="stop-toggle">Add Stop</button>
   <section class="add-stops" style="display:none">
