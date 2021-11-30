@@ -79,5 +79,5 @@ class StopUpdate(LoginRequiredMixin, UpdateView):
   model = Stop
   fields = ['name', 'arrive', 'depart', 'position', 'lodging', 'food', 'todos']
 
-  def get_success_url(self):
-      return reverse('trips_detail', kwargs={'trip_id': self.object.trip_id})
+  # def get_success_url(self):
+  #     return reverse('stops_detail', kwargs={'stop_id': self.object.stop_id})

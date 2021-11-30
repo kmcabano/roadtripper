@@ -42,6 +42,9 @@ class Stop(models.Model):
 
   def __str__(self):
       return self.name
+  
+  def get_absolute_url(self):
+      return reverse("stops_detail", kwargs={"stop_id": self.id})
 
   class Meta:
     ordering = ['depart']
