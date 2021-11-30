@@ -26,9 +26,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   min-height: 100vh;
-  --nav-bg: rgba(104, 197, 248, .7);
-  --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(36, 116, 248) solid 2px;
+  --nav-bg: rgba(187, 16, 16, 0.7);
+  --borders: rgb(0, 0, 0) solid 2px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
@@ -48,7 +47,7 @@ body {
 
 header {
   width: 100%;
-  background: var(--nav-bg-ff);
+  background: var(--nav-bg);
   border-bottom: var(--borders);
 }
 
@@ -95,6 +94,11 @@ nav li {
   color: var(--text-color);
   font-weight: 600;
   font-size: 16px;
+}
+
+.nav-title {
+  font-size: 36px;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .nav-left {
@@ -239,16 +243,8 @@ main {
 
 header {
   width: 100%;
-  background-color: transparent;
+  background: var(--nav-bg);
   border-bottom: var(--borders);
-}
-
-nav,
-.header-logo-container {
-  margin: 0;
-  background: var(--nav-bg-ff);
-  /* border: var(--borders); */
-  /* border-radius: 18px; */
 }
 
 nav {
@@ -272,12 +268,4 @@ nav {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
-
-  nav,
-  .header-logo-container {
-    background: rgba(104, 197, 248, .6);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-  }
-}
 }

@@ -13,6 +13,9 @@
   >
   <title>Roadtripper</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   {% block head %}
   {% endblock %}
 </head>
@@ -22,7 +25,7 @@
       <ul>
         {% if user.is_authenticated %}
         <div class="nav-left">
-          <li>ROADTRIPPER</li>
+          <li class="nav-title">ROADTRIPPER</li>
         </div>
         <div class="nav-right">
           <li><a href="/">Home</a></li>
@@ -32,7 +35,7 @@
         </div>
         {% else %}
         <div class="nav-left">
-          <li>ROADTRIPPER</li>
+          <li class="nav-title">ROADTRIPPER</li>
         </div>
         <div class="nav-right">
           <li><a href="/">Home</a></li>
