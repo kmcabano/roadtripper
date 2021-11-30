@@ -6,10 +6,6 @@ from django.urls import reverse
 from .models import Stop, Trip
 from .forms import StopForm
 
-# Create your views here.
-def home(request):
-  return render(request, 'home.html')
-
 def trips_index(request):
   trips = Trip.objects.all()
   return render(request, 'trips/index.html', { 'trips': trips })
@@ -33,13 +29,20 @@ def stops_delete(request, stop_id):
   stop.delete()
   return redirect('trips_detail', trip_id=trip_id)
 
+class Home(LoginView):
+  template_name = 'home.html'
+
 class TripCreate(CreateView):
   model = Trip
-  fields = '__all__'
+  fields = ['name', 'start', 'end', 'description']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class TripUpdate(UpdateView):
   model = Trip
-  fields = '__all__'
+  fields = ['name', 'start', 'end', 'description']
 
 class TripDelete(DeleteView):
   model = Trip

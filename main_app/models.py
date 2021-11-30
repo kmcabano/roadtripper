@@ -17,6 +17,7 @@ class Trip(models.Model):
   start = models.DateField()
   end = models.DateField()
   description = models.TextField(max_length=250)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.name
