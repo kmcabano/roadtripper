@@ -32,17 +32,41 @@
         <th>Food</th>
         <th>Things To Do</th></tr>
       </thead>
-      <tbody>
+      <tbody class="stops-table">
         {% for stop in trip.stop_set.all %}
-          <tr>
+        {% if stop.get_position_display == 'Origin' %}
+          <tr class="origin">
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td>{{stop.position}}</td>
+            <td>{{stop.get_position_display}}</td>
             <td>{{stop.lodging}}</td>
             <td>{{stop.food}}</td>
             <td>{{stop.todos}}</td>
           </tr>
+        {% endif %}
+        {% if stop.get_position_display == 'Stop' %}
+          <tr class="stop">
+            <td>{{stop.name}}</td>
+            <td>{{stop.arrive}}</td>
+            <td>{{stop.depart}}</td>
+            <td>{{stop.get_position_display}}</td>
+            <td>{{stop.lodging}}</td>
+            <td>{{stop.food}}</td>
+            <td>{{stop.todos}}</td>
+          </tr>
+        {% endif %}
+        {% if stop.get_position_display == 'Destination' %}
+          <tr class="destination">
+            <td>{{stop.name}}</td>
+            <td>{{stop.arrive}}</td>
+            <td>{{stop.depart}}</td>
+            <td>{{stop.get_position_display}}</td>
+            <td>{{stop.lodging}}</td>
+            <td>{{stop.food}}</td>
+            <td>{{stop.todos}}</td>
+          </tr>
+        {% endif %}
         {% endfor %}
       </tbody>
     </table>
