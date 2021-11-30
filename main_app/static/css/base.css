@@ -33,7 +33,6 @@ body {
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
   --submit: rgb(26, 128, 0);
-  --warn: rgb(255, 102, 0);
   --danger: rgb(220, 20, 30);
   --secondary: rgb(57, 57, 57);
   --card-box-shadow: 3px 3px 6px rgb(73, 0, 0);
@@ -122,16 +121,26 @@ nav li {
 
 .btn {
   font-size: var(--font-l);
-  padding: 8px 16px;
+  padding: 8px 8px;
   border-radius: 6px;
   border-width: 2px;
   border-style: solid;
   text-decoration: none;
   background-color: var(--button-bg);
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  /* display: inline-block; */
+}
+
+th {
+  border: 1px solid #999;
+}
+
+td {
+  border: 1px solid #999;
 }
 
 .btn:hover {
@@ -146,11 +155,6 @@ nav li {
 .secondary {
   color: var(--secondary);
   border-color: var(--secondary);
-}
-
-.warn {
-  color: var(--warn);
-  border-color: var(--warn);
 }
 
 .danger {

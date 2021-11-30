@@ -35,5 +35,6 @@
   <button type="submit" class="btn submit">Create Trip</button>
   {% endif %}
 </form>
+<a href="{% url 'trips_detail' trip.id %}" class="btn secondary">Cancel</a>
 
 {% endblock %}

@@ -24,12 +24,13 @@
 <section class="trip-container">
    <div class="trip-details">
     <h1>{{ trip.name }}</h1>
+    <h2> <a href="{% url 'trips_index' %}"><button class="btn">Back</button></a></h2>
     <h2>{{ trip.start }} to {{ trip.end }}</h2>
     <h3>{{ trip.description }}</h2>
   </div>
   <div class="trip-actions">
-    <a href="{% url 'trips_update' trip.id %}" class="btn warn">Edit</a>
-    <a href="{% url 'trips_delete' trip.id %}" class="btn warn">Delete</a>
+    <a href="{% url 'trips_update' trip.id %}" class="btn secondary">Edit</a>
+    <a href="{% url 'trips_delete' trip.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 <br>
@@ -39,7 +40,7 @@
     <h2 class="stops-title">Stops</h2>
     <table>
       <thead>
-        <tr><th>Location</th><th>Arrive</th><th>Depart</th></tr>
+        <tr><th>Location</th><th>Arrive</th><th>Depart</th><th></th><th></th></tr>
       </thead>
       <tbody class="stops-table">
         {% for stop in trip.stop_set.all %}
@@ -48,24 +49,24 @@
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
-            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_detail' stop.id %}">Details</a></td>
+            <td><a href="{% url 'stops_delete' stop.id %}">Delete</a></td>
           </tr>
         {% elif stop.get_position_display == 'Stop' %}
           <tr class="stop">
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
-            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_detail' stop.id %}">Details</a></td>
+            <td><a href="{% url 'stops_delete' stop.id %}">Delete</a></td>
           </tr>
         {% elif stop.get_position_display == 'Destination' %}
           <tr class="destination">
             <td>{{stop.name}}</td>
             <td>{{stop.arrive}}</td>
             <td>{{stop.depart}}</td>
-            <td><a href="{% url 'stops_detail' stop.id %}" class="btn warn">Details</a></td>
-            <td><a href="{% url 'stops_delete' stop.id %}" class="btn warn">Delete</a></td>
+            <td><a href="{% url 'stops_detail' stop.id %}">Details</a></td>
+            <td><a href="{% url 'stops_delete' stop.id %}">Delete</a></td>
           </tr>
         {% endif %}
         {% endfor %}
@@ -76,7 +77,7 @@
     <section class="stops">There are no stops on this trip</section>
   {% endif %}
   <br>
-  <button id="stop-toggle">Add Stop</button>
+  <button id="stop-toggle" class="btn">Add Stop</button>
   <section class="add-stops" style="display:none">
   <h2>Add a Stop</h2>
     <form
@@ -87,10 +88,9 @@
     >
       {% csrf_token %}
       {{ stop_form.as_p }}
-      <button type="submit" class="btn submit">Add Stop</button>
+      <button type="submit" class="btn secondary">Add Stop</button>
     </form>
   </section>
 </div>
 <br>
-<a href="{% url 'trips_index' %}"><button>Back</button></a>
 {% endblock %}
