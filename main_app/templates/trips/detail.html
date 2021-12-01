@@ -24,7 +24,7 @@
 <section class="trip-container">
    <div class="trip-details">
     <h1>{{ trip.name }}</h1>
-    <h2> <a href="{% url 'trips_index' %}"><button class="btn">Back</button></a></h2>
+    <a href="{% url 'trips_index' %}" class="btn">Back</a>
     <h2>{{ trip.start }} to {{ trip.end }}</h2>
     <h3>{{ trip.description }}</h2>
   </div>
@@ -87,7 +87,9 @@
       autocomplete="off"
     >
       {% csrf_token %}
-      {{ stop_form.as_p }}
+      <table class="stop-input-table">
+        {{ stop_form.as_table }}
+      </table>
       <button type="submit" class="btn secondary">Add Stop</button>
     </form>
   </section>

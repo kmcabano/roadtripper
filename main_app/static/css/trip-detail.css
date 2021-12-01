@@ -16,9 +16,52 @@ main {
   align-items: center;
 }
 
+.trip-details .btn {
+  margin-top: 0;
+}
+
+.trip-details h2 {
+  margin: 0;
+}
+
+.stops-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.stops {
+  justify-content: center;
+}
+
+section.add-stops p {
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 0;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
-  font-size: 48px;
+  font-size: 36px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+.trip-details h2 {
+  font-size: 36px;
+}
+h1 {
+  font-size: 60px;
+}
+table {
+  font-size: 24px;
+}
+td {
+  padding: 10px;
+}
 }
