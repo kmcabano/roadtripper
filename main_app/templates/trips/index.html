@@ -10,7 +10,7 @@
 <section class="page-header">
   <h1>My Trips</h1>
 </section>
-
+{% if trips %}
 <section class="card-container">
   {% for trip in trips %}
     <div class="card">
@@ -24,5 +24,11 @@
     </div>
   {% endfor %}
 </section>
+{% else %}
+<div class="notrips">
+  <h2>You have no trips. Add one!</h2>
+</div>
+{% endif %}
+
 
 {% endblock %}

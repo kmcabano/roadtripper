@@ -63,6 +63,6 @@ Mobile responsiveness is currently a work in progress. The overall site frame re
 
 I hope to eventually use an API from Google Maps to have data about driving times between locations.
 
-Overall design could still use a lot of work, I think this is one of my major weak points.
+Overall design could still use a lot of work, I think this is one of my major weak points. Maybe some features with images! Backgrounds!
 
-I experimented unsuccessfully with having certain stop detail fields (food & to-dos, primarily)
+I experimented unsuccessfully with having certain stop detail fields (food & to-dos, primarily) be formatted as a list you can add to, instead of a big text block. I am going to attempt to implement that in the future. This will help with the design/layout too.

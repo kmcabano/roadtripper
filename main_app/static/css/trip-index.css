@@ -34,3 +34,7 @@
   margin: 5px 0;
   font-size: var(--font-reg);
 }
+
+.notrips {
+  text-align: center;
+}
