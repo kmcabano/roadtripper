@@ -20,6 +20,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="card">
 <h1>{{stop.name}}</h1>
 {% if stop.arrive %}
 <h2>Arrive: {{stop.arrive}}</h2>
@@ -27,16 +28,32 @@
 {% if stop.depart %}
 <h2>Depart: {{stop.depart}}</h2>
 {% endif %}
-{% if stop.lodging %}
-<p>Lodging: {{stop.lodging}}</p>
-{% endif %}
-{% if stop.food %}
-<p>Food: {{stop.food}}</p>
-{% endif %}
-{% if stop.todos %}
-<p>Things to do: {{stop.todos}}</p>
-{% endif %}
-<p><a href="{% url 'stops_update' stop.id %}" class="btn secondary">Edit</a></p>
-<p><a href="{% url 'stops_delete' stop.id %}" class="btn secondary">Delete</a></p>
-<p><a href="{% url 'trips_detail' stop.trip_id %}">Back</a></p>
+<table class="stop-table">
+  <thead>
+    <tr class="stop-table-head">
+      <th id="one">Lodging</th>
+      <th id="three">Food</th>
+      <th id="five">Things To Do</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="stop-table-body">
+      {% if stop.lodging %}
+      <td id="two">{{stop.lodging}}</td>
+      {% endif %}
+      {% if stop.food %}
+      <td id="four">{{stop.food}}</td>
+      {% endif %}
+      {% if stop.todos %}
+      <td id="six">{{stop.todos}}</td>
+      {% endif %}
+    </tr>
+  </tbody>
+</table>
+  <div class="btn-container">
+    <p><a href="{% url 'stops_update' stop.id %}" class="btn secondary">Edit</a></p>
+  <p><a href="{% url 'stops_delete' stop.id %}" class="btn secondary">Delete</a></p>
+  <p><a href="{% url 'trips_detail' stop.trip_id %}" class="btn secondary">Back</a></p>
+  </div>
+</div>
 {% endblock %}

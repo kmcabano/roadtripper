@@ -4,18 +4,6 @@ main {
   flex-direction: column;
 }
 
-.stop-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.stop-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .stop-details .btn {
   margin-top: 0;
 }
@@ -26,15 +14,49 @@ main {
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 0;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 36px;
 }
 
+h2 {
+  margin: 5px;
+}
+
 h3 {
-  margin-bottom: 20px;
+  margin-bottom: 0;
   font-size: 16px;
+}
+
+.card {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(187, 16, 16, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.stop-table {
+  width: 95%;
+  min-height: 25%;
+}
+
+.stop-table-head {
+  font-size: 20px;
+}
+
+.stop-table-body {
+  font-size: 16px;
+}
+
+td {
+  padding: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -43,11 +65,32 @@ h3 {
 }
 h1 {
   font-size: 60px;
+  margin-top: -10px;
 }
 table {
   font-size: 24px;
 }
 td {
   padding: 10px;
+}
+
+.card {
+  width: 600px;
+  height: auto;
+  margin-top: 40px;
+  border: var(--borders);
+  box-shadow: var(--card-box-shadow);
+  border-radius: 5px;
+  padding: 15px
+}
+
+.stop-table {
+  width: 80%;
+  min-height: 100px;
+  margin: 5px 0 15px;
+}
+
+.stop-table td {
+  font-size: 18px;
 }
 }

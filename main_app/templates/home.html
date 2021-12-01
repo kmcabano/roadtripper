@@ -10,7 +10,7 @@
     <div class="about">
       <h1>Welcome</h1>
       ROAD READY is your all-in-one road trip planning tool.
-      Plan out and document your upcoming trips! Log in below to get started, or sign up if this is your first time here!
+      Plan out and document your upcoming trips!
     </div>
   </section>
 {% if not user.is_authenticated %}
@@ -21,6 +21,7 @@
       {{ form.as_p }}
       <input type="hidden" name="next" value="{{ next }}">
       <button type="submit" class="btn submit">Login</button>
+      <p>First time here? Sign up at the link in the top right.</p>
     </form>
   </section>
 {% endif %}
