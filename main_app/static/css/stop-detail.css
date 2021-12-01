@@ -70,8 +70,9 @@ h1 {
 table {
   font-size: 24px;
 }
-td {
+td, th {
   padding: 10px;
+  min-width: 140px;
 }
 
 .card {
@@ -85,7 +86,7 @@ td {
 }
 
 .stop-table {
-  width: 80%;
+  width: 90%;
   min-height: 100px;
   margin: 5px 0 15px;
 }

@@ -31,21 +31,27 @@
 <table class="stop-table">
   <thead>
     <tr class="stop-table-head">
-      <th id="one">Lodging</th>
-      <th id="three">Food</th>
-      <th id="five">Things To Do</th>
+      <th>Lodging</th>
+      <th>Food</th>
+      <th>Things To Do</th>
     </tr>
   </thead>
   <tbody>
     <tr class="stop-table-body">
       {% if stop.lodging %}
-      <td id="two">{{stop.lodging}}</td>
+      <td>{{stop.lodging}}</td>
+      {% else %}
+      <td></td>
       {% endif %}
       {% if stop.food %}
-      <td id="four">{{stop.food}}</td>
+      <td>{{stop.food}}</td>
+      {% else %}
+      <td></td>
       {% endif %}
       {% if stop.todos %}
-      <td id="six">{{stop.todos}}</td>
+      <td>{{stop.todos}}</td>
+      {% else %}
+      <td></td>
       {% endif %}
     </tr>
   </tbody>
