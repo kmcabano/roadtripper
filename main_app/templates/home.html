@@ -6,8 +6,15 @@
 {% endblock %}
 
 {% block content %}
+  <section class="about-section">
+    <div class="about">
+      <h1>Welcome</h1>
+      ROAD READY is your all-in-one road trip planning tool.
+      Plan out and document your upcoming trips! Log in below to get started, or sign up if this is your first time here!
+    </div>
+  </section>
 {% if not user.is_authenticated %}
-  <section>
+  <section class="login-section">
     <form action="{% url 'home' %}" method="post" class="login">
       <h1>Login</h1>
       {% csrf_token %}
@@ -17,4 +24,5 @@
     </form>
   </section>
 {% endif %}
+
 {% endblock %}
