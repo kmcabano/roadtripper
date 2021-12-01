@@ -14,20 +14,28 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/trip-detail.css' %}"
+  href="{% static 'css/stop-detail.css' %}"
 />
 
 {% endblock %}
 
 {% block content %}
-
-<p>{{stop.name}}</p>
-<p>{{stop.arrive}}</p>
-<p>{{stop.depart}}</p>
-<p>{{stop.get_position_display}}</p>
-<p>{{stop.lodging}}</p>
-<p>{{stop.food}}</p>
-<p>{{stop.todos}}</p>
+<h1>{{stop.name}}</h1>
+{% if stop.arrive %}
+<h2>Arrive: {{stop.arrive}}</h2>
+{% endif %}
+{% if stop.depart %}
+<h2>Depart: {{stop.depart}}</h2>
+{% endif %}
+{% if stop.lodging %}
+<p>Lodging: {{stop.lodging}}</p>
+{% endif %}
+{% if stop.food %}
+<p>Food: {{stop.food}}</p>
+{% endif %}
+{% if stop.todos %}
+<p>Things to do: {{stop.todos}}</p>
+{% endif %}
 <p><a href="{% url 'stops_update' stop.id %}" class="btn secondary">Edit</a></p>
 <p><a href="{% url 'stops_delete' stop.id %}" class="btn secondary">Delete</a></p>
 <p><a href="{% url 'trips_detail' stop.trip_id %}">Back</a></p>

@@ -35,8 +35,8 @@ class Stop(models.Model):
     default = POSITIONS[1][1]
   )
   lodging = models.CharField(max_length=100, null=True, blank=True)
-  food = TextField(max_length=500)
-  todos = TextField(max_length=2000)
+  food = TextField(max_length=500, null=True, blank=True)
+  todos = TextField(max_length=2000, null=True, blank=True)
 
   trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 
