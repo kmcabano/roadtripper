@@ -56,6 +56,9 @@ Clicking on the edit button will bring back the form so you can make any changes
 - CSS
 - PostgreSQL
 - Google Fonts
+- [MCDatePicker](https://github.com/mikecoj/MCDatepicker)
+
+Some CSS based on code from our code-alongs in SEI!
 
 ## The Future...
 
